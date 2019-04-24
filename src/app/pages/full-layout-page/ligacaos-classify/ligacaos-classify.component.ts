@@ -18,7 +18,12 @@ export class LigacaosClassifyComponent implements OnInit {
   itemsPerPage = 10;
   filter = ''
   newLigacao = {
-    feitas: {}
+    texto: '',
+    data: '',
+    status: '',
+    feitas: {
+      avaliacao: ''
+    }
   }
 
   constructor(public constants: GlobalConstants, private ligacaoService: LigacaoService, public toastr: ToastsManager) {
@@ -108,7 +113,12 @@ export class LigacaosClassifyComponent implements OnInit {
         this.fetchLigacaos()
         this.toastr.success(res.message, 'Success');
         this.newLigacao = {
-          feitas: {}
+          texto: '',
+          data: '',
+          status: '',
+          feitas: {
+            avaliacao: ''
+          }
         }
       }, (err) => {
         this.fetchLigacaos()
@@ -118,7 +128,12 @@ export class LigacaosClassifyComponent implements OnInit {
           this.toastr.error('Server issue', 'Error');
         }
         this.newLigacao = {
-          feitas: {}
+          texto: '',
+          data: '',
+          status: '',
+          feitas: {
+            avaliacao: ''
+          }
         }
       })
   }
