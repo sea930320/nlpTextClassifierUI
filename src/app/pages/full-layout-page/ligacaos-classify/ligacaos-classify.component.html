@@ -19,12 +19,12 @@
               <div class="col-6">
                 <div class="form-group form-inline">
                   Search: <input class="form-control ml-2" type="text" [(ngModel)]="filter"
-                    (input)="debFetchLigacaos($event)" />
+                    (input)="debFetchLigacaos" />
                 </div>
               </div>
               <div class="col-6">
                 <ngb-pagination class="float-right" [(collectionSize)]="collectionSize" [(page)]="curPage"
-                  [pageSize]="itemsPerPage" (pageChange)="debFetchLigacaos($event)"></ngb-pagination>
+                  [pageSize]="itemsPerPage" (pageChange)="debFetchLigacaos"></ngb-pagination>
               </div>
             </div>
             <table class="table table-striped table-bordered">
